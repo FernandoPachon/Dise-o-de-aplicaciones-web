@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro - MotoCapp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .form-container img {
+      width: 250px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .form-content {
+      flex: 1;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+      font-size: 26px;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .input-group i {
+      font-size: 18px;
+      margin-right: 10px;
+      color: #333;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    .terms {
+      font-size: 14px;
+      margin: 15px 0;
+    }
+
+    .terms input {
+      margin-right: 6px;
+    }
+
+    .terms a {
+      color: #3367d6;
+      text-decoration: none;
+    }
+
+    .register-button {
+      background-color: #3367d6;
+      color: white;
+      border: none;
+      padding: 12px 0;
+      font-weight: bold;
+      border-radius: 6px;
+      width: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* Estilos responsive para móviles */
+    @media (max-width: 600px) {
+      .form-container {
+        flex-direction: column;
+        padding: 30px 20px;
+      }
+
+      .form-container img {
+        width: 150px;
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <img src="LogoMotocarro.png" alt="Ilustración de registro">
+
+    <div class="form-content">
+      <h2>Únete</h2>
+
+      <div class="input-group">
+        <i>👤</i><input type="text" placeholder="Te llamas">
+      </div>
+      <div class="input-group">
+        <i>📧</i><input type="email" placeholder="Su correo electrónico">
+      </div>
+      <div class="input-group">
+        <i>🔒</i><input type="password" placeholder="Contraseña">
+      </div>
+      <div class="input-group">
+        <i>🔑</i><input type="password" placeholder="Repite tu contraseña">
+      </div>
+
+      <div class="terms">
+        <input type="checkbox"> Acepto todas las declaraciones de los
+        <a href="#">Términos de servicio</a>
+      </div>
+
+      <button class="register-button">REGISTRO</button>
+    </div>
+  </div>
+
+</body>
+</html>
+
