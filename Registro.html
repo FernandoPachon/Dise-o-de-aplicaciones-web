@@ -1,149 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Registro - MotoCapp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .form-container {
-      background-color: #ffffff;
-      padding: 40px 30px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      max-width: 800px;
-      width: 90%;
-      display: flex;
-      flex-direction: row;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .form-container img {
-      width: 250px;
-      max-width: 100%;
-      height: auto;
-    }
-
-    .form-content {
-      flex: 1;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #333;
-      font-size: 26px;
-    }
-
-    .input-group {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-
-    .input-group i {
-      font-size: 18px;
-      margin-right: 10px;
-      color: #333;
-    }
-
-    .input-group input {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
-    }
-
-    .terms {
-      font-size: 14px;
-      margin: 15px 0;
-    }
-
-    .terms input {
-      margin-right: 6px;
-    }
-
-    .terms a {
-      color: #3367d6;
-      text-decoration: none;
-    }
-
-    .register-button {
-      background-color: #3367d6;
-      color: white;
-      border: none;
-      padding: 12px 0;
-      font-weight: bold;
-      border-radius: 6px;
-      width: 100%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    /* Estilos responsive para móviles */
-    @media (max-width: 600px) {
-      .form-container {
-        flex-direction: column;
-        padding: 30px 20px;
-      }
-
-      .form-container img {
-        width: 150px;
-        margin-bottom: 15px;
-      }
-
-      h2 {
-        font-size: 24px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-  <div class="form-container">
-    <img src="LogoMotocarro.png" alt="Ilustración de registro">
+<body class="flex-center full-height">
+  <div class="auth-container card">
+    <img src="LogoMotocarro.png" alt="Registro en MotoCapp" class="auth-image">
 
-    <div class="form-content">
-      <h2>Únete</h2>
+    <div class="auth-content flex-column">
+      <h2 class="text-center">Crea tu cuenta</h2>
 
-      <div class="input-group">
-        <i>👤</i><input type="text" placeholder="Te llamas">
-      </div>
-      <div class="input-group">
-        <i>📧</i><input type="email" placeholder="Su correo electrónico">
-      </div>
-      <div class="input-group">
-        <i>🔒</i><input type="password" placeholder="Contraseña">
-      </div>
-      <div class="input-group">
-        <i>🔑</i><input type="password" placeholder="Repite tu contraseña">
+      <div class="form-group">
+        <input id="names" type="text" placeholder="Tu nombre completo" class="form-control" required>
       </div>
 
-      <div class="terms">
-        <input type="checkbox"> Acepto todas las declaraciones de los
-        <a href="#">Términos de servicio</a>
+      <div class="form-group">
+        <input id="email" type="email" placeholder="Tu correo electrónico" class="form-control" required>
       </div>
 
-      <button class="register-button">REGISTRO</button>
+      <div class="form-group">
+        <input id="password" type="password" placeholder="Crea una contraseña" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <input type="password" placeholder="Repite tu contraseña" class="form-control" required>
+      </div>
+
+      <div class="form-group" style="display: flex; align-items: center;">
+        <input type="checkbox" id="terms" style="margin-right: var(--space-sm);">
+        <label for="terms" style="font-size: 14px;">Acepto los <a href="#"
+            style="color: var(--primary);">Términos</a></label>
+      </div>
+
+      <button id="btn" class="btn btn-primary">REGISTRARME</button>
+
+      <div class="text-center" style="margin-top: var(--space-md);">
+        ¿Ya tienes cuenta? <a href="Ingreso.html" style="color: var(--primary);">Inicia sesión</a>
+      </div>
     </div>
   </div>
 
-</body>
-</html>
+  <!-- Script de validación -->
+  <script>
 
+    // guardado de datos en la session storage
+
+    var email = document.getElementById("email");
+    var password = document.getElementById("password");
+    var name = document.getElementById("names")
+    var reg = document.getElementById("btn")
+
+    reg.addEventListener("click", () => {
+      var valor = email.value
+      var valorp = password.value
+      var valorn = name.value
+      var datoss = { valor, valorp, valorn }
+      //console.log("valor de correo", datoss);
+
+      if (!valor || !valorp ) {
+        console.log("campos vacios");
+        return
+      }
+      sessionStorage.setItem("correo", valor);
+      sessionStorage.setItem("password", valorp);
+
+      console.log("Correo guardado:", sessionStorage.getItem("correo"));
+      console.log("Contraseña guardada:", sessionStorage.getItem("password"));
+    })
+
+
+    var data = {
+      Correo: JSON.stringify(email)
+    }
+    console.log(data.Correo);
+
+    if (sessionStorage.getItem("autosave")) {
+      data.value = sessionStorage.getItem("autosave")
+    }
+
+    reg.addEventListener("click", function () {
+      window.close
+      window.open('/usuario.html')
+    })
+
+    //redireccion
+
+
+
+  </script>
+</body>
+
+</html>

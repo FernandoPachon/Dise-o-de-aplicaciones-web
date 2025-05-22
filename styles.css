@@ -1,0 +1,201 @@
+/* ===== RESET Y ESTILOS BASE ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== VARIABLES ===== */
+:root {
+  --primary: #3367d6;
+  --primary-dark: #2b5da8;
+  --secondary: #e53935;
+  --light: #ffffff;
+  --gray: #eeeeee;
+  --dark-gray: #777777;
+  --border: #dcdcdc;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+}
+
+/* ===== LAYOUT ===== */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== COMPONENTES REUTILIZABLES ===== */
+/* Tarjetas */
+.card {
+  background: var(--light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  padding: var(--space-xl);
+  width: 100%;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-social {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--space-sm);
+}
+
+/* Formularios */
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-control {
+  width: 100%;
+  padding: var(--space-md);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Mapa */
+.map-container {
+  height: 300px;
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin: var(--space-md) 0;
+}
+
+/* Servicios */
+.service-item {
+  background: var(--light);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== PÁGINAS ESPECÍFICAS ===== */
+/* Login/Register */
+.auth-container {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: center;
+  max-width: 900px;
+}
+
+.auth-image {
+  width: 280px;
+  max-width: 100%;
+}
+
+.auth-content {
+  flex: 1;
+}
+
+.separator {
+  text-align: center;
+  margin: var(--space-md) 0;
+  color: var(--dark-gray);
+  position: relative;
+}
+
+.separator::before, .separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--border);
+  margin: auto;
+}
+
+/* Dashboard */
+.dashboard-card {
+  width: 360px;
+  max-width: 100%;
+}
+
+.quick-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.quick-action {
+  background: var(--gray);
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  flex: 1;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+    padding: var(--space-lg);
+  }
+  
+  .auth-image {
+    margin-bottom: var(--space-lg);
+  }
+}

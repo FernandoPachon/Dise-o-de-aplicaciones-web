@@ -148,6 +148,10 @@
 <body>
     <!-- Interfaz del Cliente -->
     <div class="container">
+        <div id="saludo">
+            
+        </div>
+        <a href="/Ingreso.html">Salir</a>
         <h2>¡Solicita un acarreo! 🛵</h2>
         <div id="cliente-map" class="cliente-map"></div>
 
@@ -165,25 +169,7 @@
         </div>
     </div>
 
-    <!-- Interfaz del Prestador -->
-    <div class="container">
-        <h2>Servicios Disponibles 📦</h2>
-        <div class="lista-servicios">
-            <div class="servicio-item">
-                <h3>Desde:Barrio Centro </h3>
-                <p>Destino: Universidades · Carga: Muebles</p>
-                <p>💰 $18,000 COP · 📏 2.5 km</p>
-                <button class="button">Aceptar Servicio</button>
-            </div>
 
-            <div class="servicio-item">
-                <h3>Desde: Cementerio Local</h3>
-                <p>Destino: Alcaldia Municipal de Aguazul · Carga: Paquetes</p>
-                <p>💰 $12,000 COP · 📏 1.8 km</p>
-                <button class="button">Aceptar Servicio</button>
-            </div>
-        </div>
-    </div>
 
     <!-- Google Maps API -->
     <script
@@ -191,6 +177,16 @@
         async defer></script>
 
     <script>
+
+        // session storage
+        const correo = sessionStorage.getItem('correo')
+        
+        const saludo = document.getElementById("saludo")
+        saludo.textContent = `"Hola ${correo.substring(0,5)}"`
+        console.log(saludo, "......");
+
+
+        // maps
         let map;
         let directionsService;
         let directionsRenderer;
@@ -338,6 +334,8 @@
                 alert(`¡Servicio aceptado! 🎉\n${servicio}`);
             });
         });
+        console.log("HOLA MUNDO");
+
     </script>
 </body>
 
