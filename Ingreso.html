@@ -6,6 +6,7 @@
   <title>Iniciar Sesión - MotoCapp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="Motocapp_logo-removebg-preview.png" type="image/png">
 </head>
 
 <body class="flex-center full-height">
@@ -13,13 +14,14 @@
     <img src="LogoMotocarro.png" alt="Logo MotoCapp" class="auth-image">
 
     <div class="auth-content">
+      <img src="Motocapp_logo-removebg-preview.png" width="60%" alt="">
       <h2 class="text-center">Iniciar sesión con</h2>
       <div class="social-buttons">
-        <button class="btn btn-social btn-primary">f</button>
-        <button class="btn btn-social btn-primary">t</button>
-        <button class="btn btn-social btn-primary">in</button>
+        <button id="social" class="btn btn-social btn-primary social">f</button>
+        <button id="social" class="btn btn-social btn-primary social">t</button>
+        <button id="social" class="btn btn-social btn-primary social">in</button>
       </div>
-
+      <div><p id="noDisp">Esta funcion aun no esta disponible</p></div>
       <div class="separator">o</div>
 
       <div class="form-group">
@@ -43,6 +45,14 @@
   </div>
 </body>
 <script>
+
+  const social = document.getElementById("social")
+  social.addEventListener("click", function () {
+    document.getElementById('noDisp').style.display = 'block';
+    
+  })
+
+
   // Obtener datos guardados
   const correoGuardado = sessionStorage.getItem('correo');
   const contraseñaGuardada = sessionStorage.getItem('password');

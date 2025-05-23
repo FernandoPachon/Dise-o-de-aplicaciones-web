@@ -31,6 +31,14 @@ body {
   --space-xl: 32px;
 }
 
+#noDisp {
+  position: absolute;
+  color: red;
+ 
+  display: flex;
+ display: none;
+}
+
 /* ===== LAYOUT ===== */
 .flex-center {
   display: flex;
@@ -51,6 +59,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+
 
 /* ===== COMPONENTES REUTILIZABLES ===== */
 /* Tarjetas */
@@ -152,6 +162,9 @@ body {
 
 .auth-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .separator {
@@ -161,7 +174,8 @@ body {
   position: relative;
 }
 
-.separator::before, .separator::after {
+.separator::before,
+.separator::after {
   content: "";
   flex: 1;
   border-bottom: 1px solid var(--border);
@@ -194,7 +208,7 @@ body {
     flex-direction: column;
     padding: var(--space-lg);
   }
-  
+
   .auth-image {
     margin-bottom: var(--space-lg);
   }
