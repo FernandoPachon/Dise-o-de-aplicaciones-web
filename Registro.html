@@ -61,12 +61,18 @@
       var valor = email.value
       var valorp = password.value
       var valorn = name.value
-      var datoss = { valor, valorp, valorn }
+      var datoss = { valor, valorp }
       //console.log("valor de correo", datoss);
 
-      if (!valor || !valorp ) {
+      if (!valor || !valorp) {
         console.log("campos vacios");
+        alert("Datos incompletos")
         return
+      } else {
+        reg.addEventListener("click", function () {
+          window.close
+          window.open('usuario.html')
+        })
       }
       sessionStorage.setItem("correo", valor);
       sessionStorage.setItem("password", valorp);
@@ -85,10 +91,7 @@
       data.value = sessionStorage.getItem("autosave")
     }
 
-    reg.addEventListener("click", function () {
-      window.close
-      window.open('usuario.html')
-    })
+
 
     //redireccion
 
