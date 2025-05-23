@@ -201,7 +201,9 @@ body {
   text-align: center;
   flex: 1;
 }
-
+#logo{
+    width: 70%;
+  }
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
   .auth-container {
@@ -211,5 +213,8 @@ body {
 
   .auth-image {
     margin-bottom: var(--space-lg);
+  }
+  #logo{
+    width: 70%;
   }
 }

@@ -30,7 +30,7 @@
             background-color: #e2e8f0;
             height: 3rem;
             align-items: center;
-            
+
             border-radius: 8px;
         }
 
@@ -45,8 +45,13 @@
             width: 25%;
             display: flex;
             justify-content: center;
-            
+
         }
+
+        #logo {
+            width: 70%;
+        }
+
         .div-header:hover {
             background-color: #3b71ca;
             transition: background 0.3s ease;
@@ -58,6 +63,7 @@
             border-radius: 8px;
             color: white;
         }
+
         .div-header:active {
             background-color: #4674beb4;
             transition: background 0.3s ease;
@@ -173,6 +179,10 @@
             .cliente-map {
                 height: 400px;
             }
+
+            #logo {
+                width: 70%;
+            }
         }
 
         /* Efectos de interacción */
@@ -190,10 +200,14 @@
 <body>
     <!-- Interfaz del Cliente -->
     <div class="container">
+        <div style="display: flex; justify-content: center;">
+
+            <img id="logo" src="/src/Motocapp_logo-removebg-preview.png" alt="">
+        </div>
         <header class="header">
             <div id="inicios" class="div-header">Inicio</div>
             <div id="favoritos" class="div-header">Favoritos</div>
-            <div  id="saludo"class="div-header"></div>
+            <div id="saludo" class="div-header"></div>
             <div id="salir" class="div-header">Salir</div>
         </header>
         <div id="saludo">
@@ -217,7 +231,30 @@
         </div>
     </div>
 
+    <footer style="margin:1%;">
+        <div style="display: flex; flex-direction:row;justify-content: space-between;">
+            <div><p style="font-weight: bold;">Todos los derechos reseverados</p></div>
+            <div>
+                <p style="font-weight: bold;">Creado por Fernando Pachon</p>
+                <p>Desarrolado en:</p>
+                <div>
+                    <img src="src\html-5.png" alt="" width="70px">
+                    <img src="src\javascript-logo-javascript-icon-transparent-free-png.webp" alt="" width="80px">
+                    <img src="src\css-3.png" alt="" width="70px">
+                </div>
+            </div>
+            <div>
+                <p style="font-weight: bold;">Contactos: </p>
 
+                <p>Celular: 320 404 9949</p>
+                <p>Email: josep3194@gmail.com</p>
+                <p>GitHub: <a href="https://github.com/FernandoPachon">FernandoPachon</a></p>
+                
+            </div>
+        </div>
+        
+        
+    </footer>
 
     <!-- Google Maps API -->
     <script
@@ -234,11 +271,11 @@
         console.log(saludo, "......");
 
         let salir = document.getElementById("salir")
-        salir.addEventListener("click",function(){
+        salir.addEventListener("click", function () {
             window.close()
-            window.open('/Ingreso.html'), '_blank'
+            window.open('/index.html'), '_blank'
         })
-        
+
 
         // maps
         let map;
